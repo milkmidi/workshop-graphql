@@ -1,13 +1,11 @@
-// import type { NextApiRequest, NextApiResponse } from 'next';
 import { graphqlHTTP } from 'express-graphql';
-import { buildSchema } from 'graphql';
 import { makeExecutableSchema } from '@graphql-tools/schema';
 
-import typeDefs from './typeDefs';
+import * as typeDefs from './typeDefs';
 import resolvers from './resolvers';
 
 export const schema = makeExecutableSchema({
-  typeDefs,
+  typeDefs: Object.values(typeDefs),
   resolvers,
 });
 
@@ -21,8 +19,9 @@ export default graphqlHTTP((req: Express.Request) => {
     graphiql: true,
     context: {
       user: {
+        id: '0',
         name: '這裡可以傳任何的東西進去',
-        id: 'fakeId0',
+        permission: 9527,
       },
     },
   };

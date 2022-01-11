@@ -1,32 +1,35 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import _ from 'lodash';
-import { users, products } from './mockData';
+import { MOCK_USERS, MOCK_PRODUCTS, MOCK_MESSAGES } from './mockData';
 
 const Query = {
-  hello: (root, args, context) => {
+  async hello(root, args, context) {
     // console.log(root);
     // console.log(args);
     // console.log(context);
     return 'Hello world!';
   },
-  user(root, args, context) {
+  async me(root, args, context) {
+    return context.user;
+  },
+  async user(root, args, context) {
     const { id } = args;
     console.log(context);
-    return _.find(users, { id });
+    return _.find(MOCK_USERS, { id });
   },
-  users(root, args, context) {
+  async users(root, args, context) {
     const { departmentId } = args;
     if (departmentId) {
-      return _.filter(users, { departmentId });
+      return _.filter(MOCK_USERS, { departmentId });
     }
-    return users;
+    return MOCK_USERS;
   },
-  messages() {
+  async messages() {
     console.log('messages');
-    return products;
+    return MOCK_PRODUCTS;
   },
-  products() {
-    return products;
+  async products() {
+    return MOCK_PRODUCTS;
   },
 };
 
@@ -48,7 +51,8 @@ const resolvers = {
   // root
   User: {
     messages(parent) {
-      return _.filter(products, { owner: parent.id });
+      // console.log('parent.id', parent.id);
+      return _.filter(MOCK_MESSAGES, { owner: parent.id });
     },
   },
 };

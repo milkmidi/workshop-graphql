@@ -1,47 +1,47 @@
 import type { User, Message, Product } from './types';
 
-export const users: User[] = [
+export const MOCK_USERS: User[] = [
   {
-    id: 'fakeId0',
+    id: '0',
     name: 'milkmidi',
     departmentId: '01',
   },
   {
-    id: 'fakeId1',
+    id: '1',
     name: '奶綠茶',
     departmentId: '01',
   },
   {
-    id: 'fakeId2',
+    id: '2',
     name: '測試員一號',
     departmentId: '02',
   },
   {
-    id: 'fakeId3',
+    id: '3',
     name: '測試員二號',
     departmentId: '02',
   },
 ];
 
-export const messages: Message[] = [
+export const MOCK_MESSAGES: Message[] = [
   {
     id: 'message01',
     name: 'fakeMessage',
-    owner: 'fakeId0',
+    owner: '0',
   },
   {
     id: 'message02',
     name: 'fakeMessage1',
-    owner: 'fakeId0',
+    owner: '0',
   },
   {
     id: 'message03',
     name: 'fakeMessage2',
-    owner: 'fakeId1',
+    owner: '1',
   },
 ];
 
-export const products: Product[] = [
+export const MOCK_PRODUCTS: Product[] = [
   {
     id: 'id0',
     sku: 'HW0109',
