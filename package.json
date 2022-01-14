@@ -5,13 +5,13 @@
   "author": "milkmidi milkmidi@gmail.com",
   "main": "src/index.ts",
   "engines": {
-    "node": "12.x",
-    "npm": "7.5.4"
+    "node": "14.x",
+    "npm": "7.x"
   },
   "scripts": {
     "dev": "nodemon src/index.ts",
     "build": "rimraf ./build && tsc --project ./",
-    "start": "npm run build && node ./build",
+    "start": "node ./build/index.js",
     "push-master": "git checkout master && git merge dev --no-ff && git push && git checkout dev"
   },
   "dependencies": {
