@@ -40,21 +40,3 @@ export const MOCK_MESSAGES: Message[] = [
     owner: '1',
   },
 ];
-
-export const MOCK_PRODUCTS: Product[] = [
-  {
-    id: 'id0',
-    sku: 'HW0109',
-    price: 229,
-  },
-  {
-    id: 'id1',
-    sku: 'HW0110',
-    price: 300,
-  },
-  {
-    id: 'id2',
-    sku: 'L2012',
-    price: 400,
-  },
-];
