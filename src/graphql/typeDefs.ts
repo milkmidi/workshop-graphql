@@ -1,3 +1,12 @@
+export const Customer = `#graphql
+  type Customer {
+    id: ID!
+    name: String!
+    email: String!
+    permission:Int!
+  }
+`;
+
 export const User = `#graphql
   type User {
     """
@@ -36,14 +45,6 @@ export const Message = `#graphql
   }
 `;
 
-export const Product = `#graphql
-  type Product {
-    id: ID!
-    sku: String!
-    price: Int!
-  }
-`;
-
 export const Query = `#graphql
   """
   這裡用來 query
@@ -54,7 +55,7 @@ export const Query = `#graphql
     """
     hello: String
 
-    me: User!
+    me: Customer
     
     " find user with id"
     user(id: ID!): User
@@ -65,7 +66,6 @@ export const Query = `#graphql
     " 回傳目前所有的 message "
     messages: [Message]
 
-    products: [Product]
   }
 
 `;

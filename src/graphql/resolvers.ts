@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import _ from 'lodash';
-import { MOCK_USERS, MOCK_PRODUCTS, MOCK_MESSAGES } from './mockData';
+import { MOCK_USERS, MOCK_MESSAGES } from './mockData';
 
 const Query = {
   async hello(root, args, context) {
-    // console.log(root);
-    // console.log(args);
-    // console.log(context);
+    /* console.log(root);
+    console.log(args);
+    console.log(context); */
     return 'Hello world!';
   },
   async me(root, args, context) {
@@ -14,7 +14,7 @@ const Query = {
   },
   async user(root, args, context) {
     const { id } = args;
-    console.log(context);
+    console.log('user args.id', id);
     return _.find(MOCK_USERS, { id });
   },
   async users(root, args, context) {
@@ -26,10 +26,7 @@ const Query = {
   },
   async messages() {
     console.log('messages');
-    return MOCK_PRODUCTS;
-  },
-  async products() {
-    return MOCK_PRODUCTS;
+    return MOCK_MESSAGES;
   },
 };
 
@@ -50,9 +47,9 @@ const resolvers = {
   Mutation,
   // root
   User: {
-    messages(parent) {
-      // console.log('parent.id', parent.id);
-      return _.filter(MOCK_MESSAGES, { owner: parent.id });
+    messages(root) {
+      console.log('User messages root.id', root.id);
+      return _.filter(MOCK_MESSAGES, { owner: root.id });
     },
   },
 };
