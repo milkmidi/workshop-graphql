@@ -45,6 +45,26 @@ export const Message = `#graphql
   }
 `;
 
+// https://logistic-api-staging.positivegrid.com/countryList
+// TODO 2
+export const Country = `#graphql
+  enum CountryFilter {
+    SHIPPING_AVAILABLE
+  }
+  type CountryState {
+    code: String!
+    name: String!
+  }
+  type Country {
+    # 就是 countryCode
+    code: String!
+    # complete Country name
+    name: String!
+    # states
+    states: [CountryState]!
+  }
+`;
+
 export const Query = `#graphql
   """
   這裡用來 query
@@ -66,6 +86,9 @@ export const Query = `#graphql
     " 回傳目前所有的 message "
     messages: [Message]
 
+    # // TODO 2
+    "所有國家列表"
+    country(filter:CountryFilter): [Country]
   }
 
 `;

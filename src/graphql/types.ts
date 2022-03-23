@@ -15,3 +15,9 @@ export type Product = {
   sku: string;
   price: number;
 };
+
+export type Country = {
+  description: string;
+  countryCode: string;
+  states: string[];
+};
