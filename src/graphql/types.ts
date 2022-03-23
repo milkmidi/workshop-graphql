@@ -21,3 +21,10 @@ export type Country = {
   countryCode: string;
   states: string[];
 };
+
+export type Inventory = {
+  day_range: string;
+  shipping_prefix: string;
+  pid: string;
+  sku: Record<string, number>;
+};

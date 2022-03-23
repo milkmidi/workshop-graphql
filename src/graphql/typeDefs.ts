@@ -9,17 +9,11 @@ export const Customer = `#graphql
 
 export const User = `#graphql
   type User {
-    """
-    就是 id
-    """
+    "就是 id"
     id: ID!
-    """
-    使用者姓名
-    """
+    "使用者姓名"
     name: String!
-    """
-    部門Id
-    """
+    "部門Id"
     departmentId: String!
     "發表過的訊息"
     messages: [Message]
@@ -29,7 +23,7 @@ export const User = `#graphql
 export const Message = `#graphql
   type Message {
     """
-    就是 id
+    就是 id 
     """
     id: ID!
     """
@@ -65,7 +59,23 @@ export const Country = `#graphql
   }
 `;
 
+// TODO 3
+// https://pg-api-staging.positivegrid.com/v2/inventories?pid=324,367&country=US
+export const Inventory = `#graphql
+  """
+  就是 Inventory
+  """
+  type Inventory {
+    day_range: String!
+    shipping_prefix: String!
+    pid: String!
+    sku: JSON!
+  }
+`;
+
 export const Query = `#graphql
+  # TODO3
+  scalar JSON
   """
   這裡用來 query
   """
@@ -86,9 +96,12 @@ export const Query = `#graphql
     " 回傳目前所有的 message "
     messages: [Message]
 
-    # // TODO 2
+    # TODO 2
     "所有國家列表"
     country(filter:CountryFilter): [Country]
+
+    # TODO3
+    # inventory(pid: [Int]!, country: String!): [Inventory]
   }
 
 `;

@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import _ from 'lodash';
 import axios from 'axios';
+import GraphQLJSON from 'graphql-type-json';
 import { MOCK_USERS, MOCK_MESSAGES } from './mockData';
-import type { Country } from './types';
+import type { Country, Inventory } from './types';
 
 const Query = {
   async hello(root, args, context) {
@@ -62,6 +63,17 @@ const Query = {
       };
     });
   },
+  /* // TODO3
+  async inventory(root, args): Promise<Inventory[]> {
+    const { pid, country } = args;
+
+    const { data } = await axios(
+      `https://pg-api-staging.positivegrid.com/v2/inventories?pid=${pid.toString()}&country=${country}`,
+    );
+    console.log(data);
+    return data;
+  },
+  // */
 };
 
 const Mutation = {
@@ -77,6 +89,9 @@ const Mutation = {
 };
 
 const resolvers = {
+  // TODO3
+  JSON: GraphQLJSON,
+  //
   Query,
   Mutation,
   // root
