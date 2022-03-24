@@ -28,7 +28,6 @@ const Query = {
     return MOCK_USERS;
   },
   async messages() {
-    console.log('messages');
     return MOCK_MESSAGES;
   },
   // TODO 2
@@ -76,7 +75,7 @@ const Query = {
   // */
 
   // TODO Yourself
-  async products() {},
+  // async products() {},
 };
 
 const Mutation = {
