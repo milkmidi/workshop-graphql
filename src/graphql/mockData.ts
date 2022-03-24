@@ -40,3 +40,22 @@ export const MOCK_MESSAGES: Message[] = [
     owner: '1',
   },
 ];
+
+// TODO Yourself
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: 'productId1',
+    sku: 'fakeSKU1',
+    price: 299,
+  },
+  {
+    id: 'productId2',
+    sku: 'fakeSKU2',
+    price: 399,
+  },
+  {
+    id: 'productId3',
+    sku: 'fakeSKU3',
+    price: 499,
+  },
+];

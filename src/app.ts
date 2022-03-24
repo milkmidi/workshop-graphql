@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, 'public')));
  */
 app.use('/graphql', graphql);
 app.get('/', (req, res) => {
-  res.send('hi, graphql');
+  res.redirect('/graphql');
 });
 
 export default app;
