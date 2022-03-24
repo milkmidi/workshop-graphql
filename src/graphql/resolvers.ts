@@ -74,6 +74,9 @@ const Query = {
     return data;
   },
   // */
+
+  // TODO Yourself
+  async products() {},
 };
 
 const Mutation = {

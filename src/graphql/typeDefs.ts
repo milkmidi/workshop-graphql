@@ -106,6 +106,10 @@ export const Query = `#graphql
 
 `;
 
+// TODO Yourself
+export const Product = `#graphql
+`;
+
 export const Mutation = `#graphql
   """
   這裡用來寫 DB
